@@ -4,6 +4,10 @@
 
 CASIO EX-wordの非公開ハードウェア情報を、既知のレジスタと安全なメモリ確保試験から取得するhomebrew診断ツールです。XD-B4800実機では、SH7305系SH-4A、1コア、Iクロック24.184 MHz、Pクロック12.092 MHz、7.5 MiBの連続ヒープ確保を確認しました。
 
+## 対応環境
+
+[`exword-template`](https://github.com/brain-hackers/exword-template)とlibexwordの対応範囲から、DATAPLUS 5 / 6 / 7を理論上の対象としています。実機で完走を確認したのはXD-B4800（DATAPLUS 6）のみです。他機種での動作は保証せず、DATAPLUS 5 / 7およびそれ以外の世代は実機未確認です。特にハードウェアレジスタの配置は機種差があり得るため、未確認機種では結果の正しさも保証しません。
+
 - APPID: `HWDMP`
 - PVR、PRR、FRQCR、ROMヘッダーを読み取り
 - RTCとTMU2からクロックを測定
@@ -20,6 +24,10 @@ GPL-2.0。ゲームデータ、CASIO firmware、端末認証情報は含みま�
 ## English
 
 EX-word Hardware Dump is a homebrew diagnostic tool that reads undocumented hardware information through known registers and bounded allocation tests. On an XD-B4800 it identified a single-core SH7305-family SH-4A, measured a 24.184 MHz instruction clock and 12.092 MHz peripheral clock, and verified a 7.5 MiB contiguous application heap.
+
+### Compatibility
+
+Based on the supported scope of [`exword-template`](https://github.com/brain-hackers/exword-template) and the libexword installation path, DATAPLUS 5, 6, and 7 are theoretical targets. A complete run has been tested only on an XD-B4800 (DATAPLUS 6). Other models are not guaranteed; DATAPLUS 5, DATAPLUS 7, and all other generations remain untested on physical hardware. Hardware-register layouts may differ by model, so the accuracy of results on untested devices is also not guaranteed.
 
 - APPID: `HWDMP`
 - Reads PVR, PRR, FRQCR, and the ROM header
