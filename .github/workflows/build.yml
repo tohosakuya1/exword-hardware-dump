@@ -20,3 +20,9 @@ jobs:
           cd -
           DEVKITPRO="$OLDPWD/devkitPro" DEVKITSH4="$DEVKITPRO/devkitSH4" PATH="$DEVKITPRO/tools/bin:$DEVKITSH4/bin:$PATH" make
           test -e build/ja/HWDMP/hwdump.d01
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: HWDMP-build
+          path: build/ja/HWDMP/
